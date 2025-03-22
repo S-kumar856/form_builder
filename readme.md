@@ -1,0 +1,1 @@
+This is a Form Builder Application that allows users to create, edit, and view forms dynamically. The application supports grouping inputs into sections and provides a drag-and-drop feature for input arrangement.
