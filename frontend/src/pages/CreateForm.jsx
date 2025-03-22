@@ -83,37 +83,37 @@ const CreateForm = () => {
             placeholder="Form Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="border p-2 rounded mb-4 w-100"
+            className="border p-2 rounded mb-4 w-100 text-xl"
             required
           />
-          <div className="mb-4">
+          <div className="flex flex-wrap gap-2 mb-4 justify-center">
             <button
               onClick={() => addInput("text")}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer"
+              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer hover:bg-blue-900"
             >
               Add Text Input
             </button>
             <button
               onClick={() => addInput("email")}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer"
+              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer hover:bg-blue-900"
             >
               Add Email Input
             </button>
             <button
               onClick={() => addInput("number")}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer"
+              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer hover:bg-blue-900"
             >
               Add Number Input
             </button>
             <button
               onClick={() => addInput("password")}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer"
+              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 cursor-pointer hover:bg-blue-900"
             >
               Add Password Input
             </button>
             <button
               onClick={() => addInput("date")}
-              className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
+              className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-900"
             >
               Add Date Input
             </button>
@@ -185,7 +185,7 @@ const CreateForm = () => {
           <button
             type="submit"
             onClick={handleSaveForm}
-            className="bg-green-500 text-white px-4 py-2 rounded mt-4 cursor-pointer"
+            className="bg-green-500 text-white px-4 py-2 rounded mt-4 cursor-pointer hover:bg-green-900"
           >
             {id ? "Update Form" : "Save Form"}
           </button>

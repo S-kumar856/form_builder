@@ -38,7 +38,7 @@ const Home = () => {
       <h1 className="text-2xl font-bold mb-4">Forms</h1>
       <Link
         to="/form/create"
-        className="bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block"
+        className="bg-blue-500 text-xl text-white px-4 py-2 rounded mb-4 inline-block hover:bg-blue-900 hove:text-white"
       >
         Create New Form
       </Link>
@@ -51,7 +51,7 @@ const Home = () => {
               key={form._id}
               className="border p-4 mb-2 rounded flex justify-between"
             >
-              <Link to={`/form/${form._id}`} className="text-blue-500">
+              <Link to={`/form/${form._id}`} className="text-blue-500 text-xl hover:underline">
                 {form.title}
               </Link>
               <div className="flex gap-2">
