@@ -1,0 +1,65 @@
+📂 form-builder-app
+├── 📂 frontend (ReactJS + Tailwind CSS)
+│   ├── 📂 src
+│   │   ├── 📂 components
+│   │   │   ├── FormList.js (Displays all forms)
+│   │   │   ├── FormBuilder.js (Component for creating/editing a form)
+│   │   │   ├── FormView.js (View a form and submit responses)
+│   │   │   ├── InputField.js (Reusable input field component)
+│   │   ├── 📂 pages
+│   │   │   ├── Home.js (/ - Home page displaying all forms)
+│   │   │   ├── CreateForm.js (/form/create - Form creation page)
+│   │   │   ├── EditForm.js (/form/:id/edit - Edit form page)
+│   │   │   ├── ViewForm.js (/form/:id - View form page)
+│   │   ├── 📂 utils
+│   │   │   ├── api.js (Handles API calls to backend)
+│   │   ├── App.js (Main component with routing)
+│   │   ├── index.js (Entry file)
+│
+├── 📄 package.json (Dependencies for frontend)
+
+// api.js (Handles API calls to backend)
+import axios from 'axios';
+
+const API_URL = 'http://localhost:5000/api/forms';
+
+export const getForms = async () => axios.get(API_URL);
+export const getFormById = async (id) => axios.get(`${API_URL}/${id}`);
+export const createForm = async (formData) => axios.post(`${API_URL}/create`, formData);
+export const updateForm = async (id, formData) => axios.put(`${API_URL}/${id}/edit`, formData);
+
+// index.js (Entry file)
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// App.js (Main component with routing)
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import CreateForm from './pages/CreateForm';
+import EditForm from './pages/EditForm';
+import ViewForm from './pages/ViewForm';
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/form/create' element={<CreateForm />} />
+        <Route path='/form/:id/edit' element={<EditForm />} />
+        <Route path='/form/:id' element={<ViewForm />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
