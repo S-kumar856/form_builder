@@ -90,6 +90,11 @@ const ViewForm = () => {
             }
             className="border p-2 rounded w-100"
           />
+          <div className="h-3">
+            {errors[input._id] && (
+              <p className="text-red-500 text-sm">{errors[input._id]}</p>
+            )}
+          </div>
         </div>
       ))}
       <button
